@@ -1,0 +1,291 @@
+#home {
+    height: 100vh;
+}
+
+.nav {
+  position: relative;
+}
+
+nav {
+  /* display: none; */
+}
+
+.nav-links {
+  display: inline;
+}
+
+.nav-links a {
+  display: inline-block;
+  margin-inline: 20px;
+}
+
+#nav-check {
+  display: none;
+}
+
+.nav-list:hover {
+    color: #af2e55;
+    transition: 1s;
+}
+
+.nav-contact {
+  position: absolute;
+    background-color: black;
+    border-radius: 8px;
+    padding: 5px;
+    color: white;
+    right: 0;
+    margin-inline: 30px; margin-block: -3px;
+}
+
+.nav-contact:hover {
+    background-color: #af2e55;
+    transition: 1s;
+}
+
+@media (max-width: 550px) {
+  nav {
+    display: inline-block;
+    position: absolute;
+    right: 0; top: 0;
+  }
+
+  nav label {
+    display: inline-block;
+    width: 50px; height: 50px;
+    padding: 12px;
+  }
+
+  nav > label:hover, #nav-check:checked ~ nav > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  nav span {
+    display: block;
+    width: 25px; height: 7px;
+    border-top: 2px solid #af2e55;
+  }
+
+  .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px; left: 0px;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+  }
+
+  #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+
+  #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+/* Home */
+@keyframes showTopText {
+    0% { transform: translate3d(0, 100%, 0); }
+    40%, 60% { transform: translate3d(0, 50%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+  
+  @keyframes showBottomText {
+    0% { transform: translate3d(0, -100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+  }
+
+  .title {
+      font-size: 60px;
+      font-weight: 600;
+  }
+
+  .subtitle{
+      font-size: 25px;
+  }
+
+  .text {
+      font-size: 18px;
+      margin-left: 50px;
+      color: rgb(116, 116, 116);
+  }
+
+  .animated-title {
+    height: 80vmin;
+    left: 50%;
+    position: relative;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+  }
+
+  .animated-title > div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+  }
+
+  .animated-title > div div {
+    padding: 2vmin 0;
+    position: absolute;
+  }
+
+  .animated-title > div div span {
+    display: block;
+  }
+
+  .text-top {
+    border-bottom: 1vmin solid #000;
+    top: 0;
+  }
+
+  .text-top div {
+    animation: showTopText 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    bottom: 0;
+    transform: translate(0, 100%);
+  }
+
+  .text-bottom div {
+    animation: showBottomText 0.5s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    top: 0;
+    transform: translate(0, -100%);
+  }
+
+.home-img {
+    width: 100%;
+    overflow: hidden;
+    margin-left: -10%;
+}
+
+.home-img img {
+    position: absolute;
+    object-fit: cover;
+    z-index: -10;
+    
+}
+
+.home-img-left {
+    width: 10%; height: 55%;
+    left: 0; top: 15%;
+    animation: 2s slide 2s forwards;
+    transform: translateX(-100%);
+}
+
+.home-img-right {
+    width: 45%; height: 25%;
+    right: 0; top: 70%;
+    animation: 2s slide 2s forwards;
+    transform: translateX(100%);
+}
+
+@keyframes slide {
+    to {
+      transform:translateX(0);
+    }
+  }
+
+.home-contact {
+    margin-left: 16%;
+    padding: 5px;
+    position: absolute;
+}
+
+.home-contact > div {
+    font-size: 20px;
+    padding: 5px;
+    margin-inline: 20px;
+    display: inline;
+}
+
+.home-contact .iconify-inline {
+    background-color: #af2e55;
+    border-radius: 100px;
+    padding: 4px;
+    margin-right: 3px; margin-top: -4px;
+    height: 30px; width: 30px;
+}
+
+.home-contact .iconify-inline:hover {
+    background-color: black;
+    transition: 1s;
+}
+
+.contact-icon > a > span:nth-child(2) {
+    vertical-align: top;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* standar tablet 768px */
+@media screen and (max-width: 768px) {
+  .title {
+      font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  #home nav a {
+    font-size: 1.7vw;
+  }
+
+  .home-contact {
+    bottom: 5%;
+  }
+
+  .home-contact div {
+    display: block;
+  }
+
+  .home-contact span {
+    font-size: 12px;
+  }
+}
+
+/* standar hp 500px ke bawah */
+@media screen and (max-width: 500px) {
+  .animated-title {
+    top: 45%;
+  }
+  
+  .title {
+      font-size: 35px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .home-contact {
+    bottom: 25%;
+  }
+
+  .home-contact span {
+    font-size: 12px;
+  }
+
+  .circle {
+    height: 70px; width: 70px;
+    right: 33%;
+  }
+
+  .circle p {
+    font-size: 11.7px;
+  }
+}

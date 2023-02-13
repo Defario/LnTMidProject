@@ -1,0 +1,47 @@
+#studies img {
+    height: 80px;
+}
+
+table td {
+    padding: 20px 5px;
+}
+
+table td:last-child {
+    padding-left: 30px;
+}
+
+.table-ed {
+    width: 70%;
+    margin-inline: auto; margin-bottom: 50px;
+}
+
+table:first-child {
+    width: 55%;
+}
+
+table a {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+    }
+
+    table:first-child {
+        width: 100%;
+        margin-left: 25px;
+    }
+
+    table:first-child td:nth-child(2) {
+        padding-left: 55px;
+    }
+
+    .table-ed {
+        width: 80%;
+    }
+
+    #studies > div:nth-child(2) {
+        display: block;
+    }
+}

@@ -1,0 +1,71 @@
+.pf-preview {
+  margin-bottom: 50px;
+}
+
+.pf-preview div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.pf-preview img {
+    width: 500px;
+    margin: 10px;
+    display: block;
+}
+
+.container {
+    position: relative;
+    width: 50%;
+  }
+
+.overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    margin: 10px;
+    width: 95.4%; height: 0;
+    transition: .5s ease;
+  }
+  
+  .container:hover .overlay {
+    height: 90%;
+  }
+  
+  .text {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    width: 80%;
+    top: 50%; left: 35%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (max-width: 768px) {
+    .pf-preview {
+      width: 100%;
+    }
+    
+    .pf-preview > div {
+      flex-direction: column;
+      margin-inline: -130px;
+    }
+
+    .container {
+      margin-inline: auto;
+    }
+
+    .overlay {
+      width: 95.7%;
+    }
+
+    .overlay div {
+      font-size: 14px;
+    }
+
+    .container:hover .overlay {
+      height: 91%;
+    }
+  }
